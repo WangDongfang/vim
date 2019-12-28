@@ -29,20 +29,22 @@ function MyDiff()
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""
-" ĞÂÌí¼Ó
+" æ–°æ·»åŠ 
 """"""""""""""""""""""""""""""""""""""""
 set number
-set nowrap          "²»×Ô¶¯»»ĞĞ
-set hlsearch        "¸ßÁÁËÑË÷×Ö·û´®
-set tabstop=4       "Tab¼ü4¸ö×Ö·û¿í¶È
-set expandtab       "Tab¼üÊ¹ÓÃ¿Õ¸ñ´úÌæ
-set autoindent      "×Ô¶¯Ëõ½ø
-set smartindent     "ÖÇÄÜËõ½ø£¬²»ÖªµÀ¸ÉÉ¶ÓÃµÄ
-set shiftwidth=4    "º¯ÊıËõ½ø4¸ö×Ö·û¿í¶È
-set nobackup        "²»Éú³É±¸·İÎÄ¼ş
-set cursorline      "¸ßÁÁµ±Ç°ĞĞ
-set autochdir       "×Ô¶¯Éèµ±Ç°±à¼­µÄÎÄ¼şËùÔÚÄ¿Â¼Îª¹¤×÷Ä¿Â¼
-color koehler       "Ê¹ÓÃ¿ÆÀÕÅäÉ«·½°¸
+set nowrap          "ä¸è‡ªåŠ¨æ¢è¡Œ
+set hlsearch        "é«˜äº®æœç´¢å­—ç¬¦ä¸²
+set tabstop=4       "Tabé”®4ä¸ªå­—ç¬¦å®½åº¦
+set expandtab       "Tabé”®ä½¿ç”¨ç©ºæ ¼ä»£æ›¿
+set autoindent      "è‡ªåŠ¨ç¼©è¿›
+set smartindent     "æ™ºèƒ½ç¼©è¿›ï¼Œä¸çŸ¥é“å¹²å•¥ç”¨çš„
+set shiftwidth=4    "å‡½æ•°ç¼©è¿›4ä¸ªå­—ç¬¦å®½åº¦
+set nobackup        "ä¸ç”Ÿæˆå¤‡ä»½æ–‡ä»¶
+set noswapfile
+set noundofile
+set cursorline      "é«˜äº®å½“å‰è¡Œ
+set autochdir       "è‡ªåŠ¨è®¾å½“å‰ç¼–è¾‘çš„æ–‡ä»¶æ‰€åœ¨ç›®å½•ä¸ºå·¥ä½œç›®å½•
+color koehler       "ä½¿ç”¨ç§‘å‹’é…è‰²æ–¹æ¡ˆ
 
 
 imap <F8>   <Esc>I/* <Esc>A */
@@ -76,29 +78,29 @@ nmap <F9> O/*===================================================================
 nmap <F10>  0f(byeO/*==============================================================================<CR>- <Esc>pA()<CR><CR><BS><BS>- <CR>/<Esc>kA
 
 
-"Ctrl+S¼ü ±£´æÎÄ¼ş
+"Ctrl+Sé”® ä¿å­˜æ–‡ä»¶
 imap <C-s> <Esc>:w!<CR>a
 nmap <C-s> <Esc>:w!<CR>
-"F11¼ü ¿ìËÙÓ³Éäm¼Ä´æÆ÷
+"F11é”® å¿«é€Ÿæ˜ å°„må¯„å­˜å™¨
 nmap <F11> @m
 
 
 if has("gui_running")
-    auto GUIEnter * simalt ~x " ´°¿ÚÆô¶¯Ê±×Ô¶¯×î´ó»¯
-    set guioptions-=m " Òş²Ø²Ëµ¥À¸
-	set guioptions-=T " Òş²Ø¹¤¾ßÀ¸
-	set guioptions-=L " Òş²Ø×ó²à¹ö¶¯Ìõ
-	"set guioptions-=r " Òş²ØÓÒ²à¹ö¶¯Ìõ
-	"set guioptions-=b " Òş²Øµ×²¿¹ö¶¯Ìõ
-	"set showtabline=0 " Òş²ØTabÀ¸
+    auto GUIEnter * simalt ~x " çª—å£å¯åŠ¨æ—¶è‡ªåŠ¨æœ€å¤§åŒ–
+    set guioptions-=m " éšè—èœå•æ 
+	set guioptions-=T " éšè—å·¥å…·æ 
+	set guioptions-=L " éšè—å·¦ä¾§æ»šåŠ¨æ¡
+	"set guioptions-=r " éšè—å³ä¾§æ»šåŠ¨æ¡
+	"set guioptions-=b " éšè—åº•éƒ¨æ»šåŠ¨æ¡
+	"set showtabline=0 " éšè—Tabæ 
 endif
 
 """"""""""""""""""""""""""""""""""""""""
-" ctags taglist Ïà¹Ø
+" ctags taglist ç›¸å…³
 """"""""""""""""""""""""""""""""""""""""
 set tags=tags;
 nmap <F12> :TlistToggle<CR>
 imap <F12> <Esc>:TlistToggle<CR>i
-let Tlist_Exit_OnlyWindow = 1 "Èç¹ûtaglist´°¿ÚÊÇ×îºóÒ»¸ö´°¿Ú£¬ÔòÍË³övim
-"let Tlist_Use_SingleClick = 1 "µ¥»÷tag¾ÍÌø×ª
-"let Tlist_GainFocus_On_ToggleOpen = 1 "Ê¹ÓÃ:TlistToggle´ò¿ªtaglist´°¿ÚÊ±£¬½¹µã×Ô¶¯ÔÚtaglist´°¿ÚÖĞ
+let Tlist_Exit_OnlyWindow = 1 "å¦‚æœtaglistçª—å£æ˜¯æœ€åä¸€ä¸ªçª—å£ï¼Œåˆ™é€€å‡ºvim
+"let Tlist_Use_SingleClick = 1 "å•å‡»tagå°±è·³è½¬
+"let Tlist_GainFocus_On_ToggleOpen = 1 "ä½¿ç”¨:TlistToggleæ‰“å¼€taglistçª—å£æ—¶ï¼Œç„¦ç‚¹è‡ªåŠ¨åœ¨taglistçª—å£ä¸­
